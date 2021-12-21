@@ -27,7 +27,7 @@ body {
 }
 
 .Characters {
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(180px,auto));
   grid-gap: 1.5rem;
   grid-row-gap: 1.5em;
   display: grid;
@@ -50,6 +50,12 @@ body {
   animation-name: fade;
 }
 
+.Characters-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .Characters-card img {
   width: 100%;
   height: auto;
@@ -66,7 +72,7 @@ body {
   font-size: 18px;
   font-weight: 400;
   text-align: left;
-  margin: 20px;
+  margin: 20px 20px 0 20px;
 }
 
 .Characters-item {
@@ -90,7 +96,7 @@ body {
   font-weight: 300;
   padding: 5px 10px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .Characters-item a {
@@ -119,4 +125,25 @@ body {
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 620px) {
+  .Header-main {
+    flex-direction: column;
+    margin-bottom: 32px;
+  }
+  .Header .Header-nav a {
+    font-size: 12px;
+  }
+  .Header h1 a {
+    font-size: 16px;
+  }
+  .Characters-inner {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 0.5fr;
+
+  }
+  .Characters-text {
+    align-items: center;
+  }
 }
